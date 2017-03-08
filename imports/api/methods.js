@@ -39,15 +39,15 @@ Meteor.methods({
 });
 
 Meteor.methods({
-  insertMassage(datab) {
-    check(datab, {
+  insertMassage(database) {
+    check(database, {
       text: String,
       location: String,
     });
      
       Datab.insert({
-        text: datab.text,
-        location: datab.location,
+        text: database.text,
+        location: database.location,
         createdAt: new Date(),
         owner: this.userId,
         username: Meteor.users.findOne(this.userId).username,

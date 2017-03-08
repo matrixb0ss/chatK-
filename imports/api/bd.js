@@ -4,11 +4,11 @@ import { check } from 'meteor/check';
 
 import './methods.js';
 
-export const Datab = new Mongo.Collection('povid');
+export const Datab = new Mongo.Collection('chatdb');
 
 if (Meteor.isServer) {
   // This code only runs on the server
-  Meteor.publish('povid', function tasksPublication() {
+  Meteor.publish('chatdb', function tasksPublication() {
     return Datab.find();
   });
 }
@@ -16,8 +16,8 @@ if (Meteor.isServer) {
 
 if (Meteor.isServer) {
 Meteor.methods({
-  insertDatab(povid) {
-    check(povid, {
+  insertDatab(chatdb) {
+    check(chatdb, {
       text:String,
       location:String,
     });
@@ -27,8 +27,8 @@ Meteor.methods({
     }
     else{
     Massages.insert({
-      text:povid.text,
-      location:povid.location,
+      text: chatdb.text,
+      location: chatdb.location,
       createdAt: new Date(),
       owner: this.userId,
       username: Meteor.users.findOne(this.userId).username,

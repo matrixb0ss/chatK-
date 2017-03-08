@@ -44,7 +44,7 @@ MainPage.PropTypes = {
 };
 
 export default createContainer(({params}) => {
-  Meteor.subscribe('povid');
+  Meteor.subscribe('chatdb');
 
     return {
       tasks: Datab.find({"location": params.location}).fetch(),
