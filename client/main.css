@@ -1,9 +1,7 @@
-/* CSS declarations go here */
 body {
 	background: -moz-linear-gradient(left, #2193b0 0, #6dd5ed 100%);
 }
-
-.modal.show{
+.modal.show {
 	background: -moz-linear-gradient(left, #2193b0 0, #6dd5ed 100%);
 }
 
@@ -30,7 +28,7 @@ body {
 	position: fixed;
 }
 
-.messagebox{
+.messagebox {
 	bottom: 0;
 	position: fixed;
 	width: 70%;
@@ -61,7 +59,7 @@ body {
 	font-size: 16px;
 }
 
-.messages-content{
+.messages-content {
 	margin-top: 35px;
 }
 
@@ -76,8 +74,11 @@ body {
 	text-align: center;
 }
 
-.messarea {
-
+#messg {
+	color: black;
+}
+#messg h4 span {
+	color: #2193b0;
 }
 
 /*Edit, Logout style*/
@@ -87,14 +88,14 @@ body {
 }
 
 #options a {
- color: #777;	
- text-decoration: none;
+	color: #777;	
+	text-decoration: none;
 }
 
 #options a:hover {
 	color: #5e5e5e;
 }
 
-#edit{
+#edit {
 	padding-right: 15px;
 }

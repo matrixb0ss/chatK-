@@ -29,8 +29,7 @@ export default class LoginPage extends Component {
 
   render(){
     const error = this.state.error;
-    return (
-     
+    return(     
       <div className="modal show">
         <div className="modal-dialog">
           <div className="modal-content">

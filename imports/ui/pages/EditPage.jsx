@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 import { Accounts } from 'meteor/accounts-base'
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-
-import LiMassages from './mess.jsx';
-
+import Chatmessgs from './Messgs.jsx';
 
 export default class EditPage extends Component {
   constructor(props){
@@ -20,7 +18,6 @@ export default class EditPage extends Component {
 
 handleEdit(e){
   e.preventDefault();
-
   let username = document.getElementById('editusername').value;
   let email = document.getElementById('editemail').value;
   let password = document.getElementById('editpassword').value;
@@ -29,36 +26,29 @@ handleEdit(e){
     if (password != passwordconf){
      this.setState({error:"Passwords is different, please try again!"})
     }
-
     else{
-
       if( username!="" || email!="" || password!=""){
-
         Meteor.apply('EditPage', [{
          newUsername: username,
          email: email,
          password: password,
         }]
-          );
-
-      this.setState({error:"Changes Confirmed"});
-
+        );
+        this.setState({error:"Changes Confirmed"});
       }
 
-    else{
-      this.setState({error:"Nothing Changed"});
-    }
+      else{
+        this.setState({error:"Nothing Changed"});
+      }
   }
 }
 
 handleBack(event){
   browserHistory.push('/');
 }
-
   render(){
     const error = this.state.error;
-
-    return (
+    return(
       <div className="modal show">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -69,7 +59,6 @@ handleBack(event){
               { error.length > 0 ? 
                 <div className="alert alert-danger fade in">{this.state.error}</div> :''}
                   <form id="login-form" className="form col-md-12 center-block" onSubmit={this.handleEdit}>
-                    
                     <div className="form-group">
                       <input type="text" id="editusername" ref="textInput" className="form-control input-lg" placeholder="New username"/>
                     </div>
@@ -95,8 +84,8 @@ handleBack(event){
                       <input type="submit" onClick={this.handleBack} id="login-button" className="btn btn-primary btn-lg btn-block" value="Back to chat" />
                   </div>
 
-             </div>
-            <div className="modal-footer" style={{borderTop: 0}}></div>
+            </div>
+              <div className="modal-footer" style={{borderTop: 0}}></div>
           </div>
         </div>
       </div>

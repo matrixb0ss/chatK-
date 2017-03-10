@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data'
 
-import Forma from './Form.jsx';
+import Form from './Form.jsx';
 import City from './Сity.jsx';
-import Dno from './Messgs.jsx';
+import Chatmessgs from './Messgs.jsx';
 import {Datab} from '../../api/bd.js';
 
 export class MainPage extends Component {
@@ -16,8 +16,7 @@ export class MainPage extends Component {
   }
   renderTasks() {
     return this.props.tasks.map((task) => (
-
-      <Dno key={task._id} task={task}/>
+      <Chatmessgs key={task._id} task={task}/>
     ));
   }
 
@@ -30,7 +29,7 @@ export class MainPage extends Component {
               <ul>
                 {this.renderTasks()}
               </ul>
-            <Forma location = {this.props.params.location}/> 
+            <Form location = {this.props.params.location}/> 
             </div> 
           </div>
         </div>
@@ -45,7 +44,6 @@ MainPage.PropTypes = {
 
 export default createContainer(({params}) => {
   Meteor.subscribe('chatdb');
-
     return {
       tasks: Datab.find({"location": params.location}).fetch(),
     };

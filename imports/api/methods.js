@@ -2,11 +2,8 @@ import { check } from 'meteor/check';
 import { Accounts } from 'meteor/accounts-base'
 import { browserHistory, Link } from 'react-router'
 import { Meteor } from 'meteor/meteor';
-
 import {Datab} from './bd.js'
 import { findDOMNode } from 'react-dom';
-
-
 
 if (Meteor.isServer){
 Meteor.methods({
