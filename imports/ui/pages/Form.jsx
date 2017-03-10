@@ -28,7 +28,7 @@ render(){
 						<textarea id="messarea" ref="textInput" className="formarea" type="text" placeholder="enter your message" ></textarea><br/>
 					</div>
 					<div className="col-md-2 no-padd ">
-						<input type="submit" className="btn btn-lg btn-primary btn-block knopka" value="Send" id="Sendbutt"></input>
+						<input type="submit" className="btn btn-lg btn-primary btn-block knopka" value="Send" ></input>
                     </div>
                    </div>
 			</form>
